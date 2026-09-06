@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "profullstack-x402-gateway"
-version = "0.1.0"
+version = "0.1.1"
 description = "Sell crawl access to AI training crawlers by the day over x402, settled by CoinPay. ASGI and WSGI middleware, signed passes, robots.txt. A port of @profullstack/x402-gateway."
 readme = "README.md"
 license = "MIT"
