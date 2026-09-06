@@ -1,15 +1,28 @@
 name: release-ruby
+# RubyGems trusted publishing. Before the first tag, register a PENDING publisher on
+# rubygems.org for each gem (rubygems.org/profile/oidc/pending_trusted_publishers),
+# pointing at owner profullstack, repository x402-ports, workflow release-ruby.yml,
+# with the Environment field left BLANK because this workflow declares none.
+#
+# The gems are built and pushed directly instead of through rubygems/release-gem, which
+# runs `bundle exec rake release`. That would need a Gemfile and a Rakefile in every gem,
+# and it also git-tags and pushes a bare v0.1.0, which is wrong in a monorepo that
+# namespaces its tags per language.
 on:
   push: { tags: ["ruby-v*"] }
 jobs:
   publish:
     runs-on: ubuntu-latest
-    # RubyGems trusted publishing: register this repo + workflow on rubygems.org for both gems.
-    permissions: { id-token: write, contents: write }
+    permissions: { id-token: write, contents: read }
     strategy: { matrix: { gem: [x402-gateway, coinpay] } }
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with: { ruby-version: "3.3" }
-      - uses: rubygems/release-gem@v1
-        with: { working-directory: "ruby/${{ matrix.gem }}" }
+      - uses: rubygems/configure-rubygems-credentials@v2.1.0
+      - name: Build the gem
+        run: gem build *.gemspec
+        working-directory: "ruby/${{ matrix.gem }}"
+      - name: Push to RubyGems
+        run: gem push *.gem
+        working-directory: "ruby/${{ matrix.gem }}"
