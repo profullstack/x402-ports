@@ -1,6 +1,7 @@
 name: release-rust
 on:
   push: { tags: ["rust-v*"] }
+  workflow_dispatch:
 jobs:
   publish:
     runs-on: ubuntu-latest

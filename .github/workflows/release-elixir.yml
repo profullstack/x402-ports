@@ -1,6 +1,7 @@
 name: release-elixir
 on:
   push: { tags: ["elixir-v*"] }
+  workflow_dispatch:
 jobs:
   publish:
     runs-on: ubuntu-latest
