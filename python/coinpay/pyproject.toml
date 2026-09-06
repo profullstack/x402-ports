@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "coinpay"
-version = "0.1.1"
+version = "0.1.2"
 description = "The CoinPay CLI (coinpay x402 pay, checkout, wallets) from pip. A thin launcher for @profullstack/coinpay."
 readme = "README.md"
 license = "MIT"
