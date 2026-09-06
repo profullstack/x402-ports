@@ -34,6 +34,19 @@ jobs:
             echo "ready=false" >> "$GITHUB_OUTPUT"
             echo "::notice::PHP_SPLIT_TOKEN is not set, so $MIRROR was left untouched."
           fi
+      - id: tag
+        if: steps.gate.outputs.ready == 'true'
+        env:
+          REF: ${{ github.ref }}
+          NAME: ${{ github.ref_name }}
+        run: |
+          # The monorepo namespaces tags per language (php-v0.1.0), but Composer only
+          # reads a version out of a tag like v0.1.0, so the prefix is dropped here.
+          if [ "${REF#refs/tags/php-v}" != "$REF" ]; then
+            echo "value=${NAME#php-}" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/checkout@v4
         if: steps.gate.outputs.ready == 'true'
         with: { fetch-depth: 0 }
@@ -46,6 +59,6 @@ jobs:
           branch: main
           user_name: github-actions
           user_email: actions@github.com
-          tag: ${{ startsWith(github.ref, 'refs/tags/php-v') && github.ref_name || '' }}
+          tag: ${{ steps.tag.outputs.value }}
         env:
           GITHUB_TOKEN: ${{ secrets.PHP_SPLIT_TOKEN }}
