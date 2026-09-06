@@ -4,7 +4,13 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    # PyPI trusted publishing: register this repo + workflow on pypi.org for both projects.
+    # PyPI trusted publishing: register this repo + workflow on pypi.org for both
+    # projects, with the environment below. The environment is what stops a
+    # maintainer with commit access from publishing to PyPI without review: the
+    # OIDC token PyPI accepts is only issued to a job running in it, so protection
+    # rules on the environment gate the release. Create it under the repository's
+    # Settings → Environments, and name it in each project's publisher on PyPI.
+    environment: pypi
     permissions: { id-token: write, contents: read }
     strategy: { matrix: { package: [x402_gateway, coinpay] } }
     steps:
