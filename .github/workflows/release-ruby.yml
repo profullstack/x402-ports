@@ -12,4 +12,4 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with: { ruby-version: "3.3" }
       - uses: rubygems/release-gem@v1
-        with: { working-directory: ruby/${{ matrix.gem }} }
+        with: { working-directory: "ruby/${{ matrix.gem }}" }

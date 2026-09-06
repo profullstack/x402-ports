@@ -1,5 +1,4 @@
 node_modules/
-spec/package-lock.json
 __pycache__/
 *.pyc
 dist/

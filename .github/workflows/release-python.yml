@@ -13,4 +13,4 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install build && cd python/${{ matrix.package }} && python -m build
       - uses: pypa/gh-action-pypi-publish@release/v1
-        with: { packages-dir: python/${{ matrix.package }}/dist }
+        with: { packages-dir: "python/${{ matrix.package }}/dist" }
