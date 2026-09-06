@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+declare(strict_types=1);
+
+foreach ([__DIR__ . '/../src/Launcher.php'] as $f) {
+    if (is_file($f)) {
+        require $f;
+    }
+}
+exit(\Profullstack\Coinpay\Launcher::main(array_slice($argv, 1), $argv[0]));

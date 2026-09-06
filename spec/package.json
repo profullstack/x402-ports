@@ -1,0 +1,8 @@
+{
+  "name": "x402-ports-spec",
+  "private": true,
+  "type": "module",
+  "description": "Generates spec/vectors.json from the JavaScript reference implementation.",
+  "scripts": { "gen": "node gen-vectors.mjs > vectors.json" },
+  "dependencies": { "@profullstack/x402-gateway": "0.3.0" }
+}

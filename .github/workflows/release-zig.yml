@@ -1,0 +1,14 @@
+name: release-zig
+on:
+  push: { tags: ["zig-v*"] }
+jobs:
+  tarball:
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          v=${GITHUB_REF_NAME#zig-v}
+          tar -C zig -czf x402_gateway-zig-$v.tar.gz build.zig build.zig.zon src README.md LICENSE
+      - uses: softprops/action-gh-release@v2
+        with: { files: x402_gateway-zig-*.tar.gz }

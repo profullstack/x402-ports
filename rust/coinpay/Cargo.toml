@@ -1,0 +1,17 @@
+[package]
+name = "coinpay"
+version = "0.1.0"
+description = "The CoinPay CLI (coinpay x402 pay, checkout, wallets) from cargo. A thin launcher for @profullstack/coinpay on npm."
+readme = "README.md"
+keywords = ["coinpay", "x402", "payments", "usdc", "cli"]
+categories = ["command-line-utilities"]
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[[bin]]
+name = "coinpay"
+path = "src/main.rs"
+
+[dependencies]

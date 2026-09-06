@@ -1,0 +1,17 @@
+{
+  "name": "profullstack/x402-gateway",
+  "description": "Sell crawl access to AI training crawlers by the day over x402, settled by CoinPay. PSR-15 and Laravel middleware, signed passes, robots.txt. A port of @profullstack/x402-gateway.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": ["x402", "402", "crawler", "ai-crawler", "gptbot", "robots.txt", "coinpay", "usdc", "psr-15", "laravel", "middleware", "paywall"],
+  "homepage": "https://github.com/profullstack/x402-ports",
+  "authors": [{ "name": "Profullstack, LLC" }],
+  "require": { "php": ">=8.1", "ext-json": "*" },
+  "suggest": {
+    "ext-bcmath": "Exact arithmetic on proofs whose value exceeds 64 bits (otherwise such proofs are refused, never overcharged)",
+    "psr/http-server-middleware": "For the PSR-15 middleware (Slim, Mezzio, Laminas)",
+    "psr/http-factory": "For the PSR-15 middleware"
+  },
+  "autoload": { "psr-4": { "Profullstack\\X402Gateway\\": "src/" } },
+  "scripts": { "test": "php tests/vectors.php" }
+}

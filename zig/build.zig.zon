@@ -1,0 +1,13 @@
+.{
+    .name = .x402_gateway,
+    .version = "0.1.0",
+    .fingerprint = 0xac8080fc5907d1c2, // Changing this has security and trust implications.
+    .minimum_zig_version = "0.16.0",
+    .dependencies = .{},
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "README.md",
+    },
+}

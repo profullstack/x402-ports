@@ -1,0 +1,2161 @@
+{
+  "generatedFrom": "@profullstack/x402-gateway@0.3.0",
+  "constants": {
+    "NOW": 1800000000,
+    "SECRET": "cp_live_test_secret_0123456789",
+    "PAY_TO": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+    "SITE": "https://example.com",
+    "TRAINING_AGENTS": [
+      "GPTBot",
+      "ClaudeBot",
+      "anthropic-ai",
+      "CCBot",
+      "meta-externalagent",
+      "FacebookBot",
+      "Bytespider",
+      "Applebot-Extended"
+    ],
+    "RETRIEVAL_AGENTS": [
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "Claude-SearchBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User",
+      "Google-Extended",
+      "Bingbot"
+    ],
+    "METHODS": [
+      {
+        "key": "usdc_base",
+        "network": "eip155:8453",
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "label": "USDC on Base"
+      },
+      {
+        "key": "usdc_polygon",
+        "network": "eip155:137",
+        "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+        "label": "USDC on Polygon"
+      },
+      {
+        "key": "usdc_eth",
+        "network": "eip155:1",
+        "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+        "label": "USDC on Ethereum"
+      }
+    ],
+    "defaults": {
+      "priceCents": 100,
+      "currency": "USD",
+      "passMinutes": 1440,
+      "maxDays": 30,
+      "header": "x-crawl-pass",
+      "path": "/crawl",
+      "coinpayBaseUrl": "https://coinpayportal.com"
+    }
+  },
+  "passes": [
+    {
+      "secret": "cp_live_test_secret_0123456789",
+      "ref": "0xdeadbeef",
+      "iat": 1800000000,
+      "exp": 1800086400,
+      "token": "cp_eyJ2IjoxLCJpYXQiOjE4MDAwMDAwMDAsImV4cCI6MTgwMDA4NjQwMCwicmVmIjoiMHhkZWFkYmVlZiJ9.O_9Bv0VkyFNIOALzB2yD9iWqXNsoskZF7vPeBKuO5Ds"
+    },
+    {
+      "secret": "cp_live_test_secret_0123456789",
+      "ref": null,
+      "iat": 1800000000,
+      "exp": 1800086400,
+      "token": "cp_eyJ2IjoxLCJpYXQiOjE4MDAwMDAwMDAsImV4cCI6MTgwMDA4NjQwMCwicmVmIjpudWxsfQ.iVkseBgjbCssZvC98U3kv2kw5L8YTs_L7Wx-klGO7Us"
+    },
+    {
+      "secret": "cp_live_test_secret_0123456789",
+      "ref": "nonce-7-days",
+      "iat": 1800000000,
+      "exp": 1800604800,
+      "token": "cp_eyJ2IjoxLCJpYXQiOjE4MDAwMDAwMDAsImV4cCI6MTgwMDYwNDgwMCwicmVmIjoibm9uY2UtNy1kYXlzIn0.C5-5I8FInLsrDhrSI7ZzAd8AqZ17hnGEVF8gfbOAU4Y"
+    }
+  ],
+  "readPass": [
+    {
+      "token": "cp_eyJ2IjoxLCJpYXQiOjE4MDAwMDAwMDAsImV4cCI6MTgwMDA4NjQwMCwicmVmIjoiMHhkZWFkYmVlZiJ9.O_9Bv0VkyFNIOALzB2yD9iWqXNsoskZF7vPeBKuO5Ds",
+      "now": 1800000000,
+      "ok": true,
+      "claims": {
+        "exp": 1800086400,
+        "iat": 1800000000,
+        "ref": "0xdeadbeef"
+      }
+    },
+    {
+      "token": "cp_eyJ2IjoxLCJpYXQiOjE4MDAwMDAwMDAsImV4cCI6MTgwMDA4NjQwMCwicmVmIjoiMHhkZWFkYmVlZiJ9.O_9Bv0VkyFNIOALzB2yD9iWqXNsoskZF7vPeBKuO5Ds",
+      "now": 1800086399,
+      "ok": true,
+      "claims": {
+        "exp": 1800086400,
+        "iat": 1800000000,
+        "ref": "0xdeadbeef"
+      }
+    },
+    {
+      "token": "cp_eyJ2IjoxLCJpYXQiOjE4MDAwMDAwMDAsImV4cCI6MTgwMDA4NjQwMCwicmVmIjoiMHhkZWFkYmVlZiJ9.O_9Bv0VkyFNIOALzB2yD9iWqXNsoskZF7vPeBKuO5Ds",
+      "now": 1800086400,
+      "ok": false,
+      "why": "expired at exactly exp"
+    },
+    {
+      "token": "cp_eyJ2IjoxLCJpYXQiOjE4MDAwMDAwMDAsImV4cCI6MTgwMDA4NjQwMCwicmVmIjoiMHhkZWFkYmVlZiJ9.O_9Bv0VkyFNIOALzB2yD9iWqXNsoskZF7vPeBKuO5DA",
+      "now": 1800000000,
+      "ok": false,
+      "why": "signature tampered"
+    },
+    {
+      "token": "cp_fyJ2IjoxLCJpYXQiOjE4MDAwMDAwMDAsImV4cCI6MTgwMDA4NjQwMCwicmVmIjoiMHhkZWFkYmVlZiJ9.O_9Bv0VkyFNIOALzB2yD9iWqXNsoskZF7vPeBKuO5Ds",
+      "now": 1800000000,
+      "ok": false,
+      "why": "payload tampered"
+    },
+    {
+      "token": "cp_eyJ2IjoxLCJpYXQiOjE4MDAwMDAwMDAsImV4cCI6MTgwMDA4NjQwMCwicmVmIjoiMHhkZWFkYmVlZiJ9.O_9Bv0VkyFNIOALzB2yD9iWqXNsoskZF7vPeBKuO5Ds",
+      "now": 1800000000,
+      "secret": "wrong",
+      "ok": false,
+      "why": "wrong secret"
+    },
+    {
+      "token": "not-a-pass",
+      "now": 1800000000,
+      "ok": false
+    },
+    {
+      "token": "cp_nodot",
+      "now": 1800000000,
+      "ok": false
+    },
+    {
+      "token": "cp_.",
+      "now": 1800000000,
+      "ok": false
+    },
+    {
+      "token": "",
+      "now": 1800000000,
+      "ok": false
+    },
+    {
+      "token": "cp_eyJ2IjoyLCJleHAiOjk5OTk5OTk5OTl9.sig",
+      "now": 1800000000,
+      "ok": false,
+      "why": "wrong version, bad sig"
+    }
+  ],
+  "offers": [
+    {
+      "in": {
+        "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+        "priceCents": 100,
+        "resource": "https://example.com/crawl",
+        "description": "1440 minutes of crawl access to https://example.com"
+      },
+      "out": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "1000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "1000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "1000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "in": {
+        "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+        "priceCents": 150,
+        "resource": "https://example.com/crawl",
+        "description": "x"
+      },
+      "out": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "1500000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "x",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "1500000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "x",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "1500000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "x",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "in": {
+        "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+        "priceCents": 1,
+        "resource": "https://example.com/crawl",
+        "description": "x"
+      },
+      "out": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "10000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "x",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "10000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "x",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "10000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "x",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "in": {
+        "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+        "priceCents": 0.5,
+        "resource": "https://example.com/crawl",
+        "description": "x",
+        "maxTimeoutSeconds": 60
+      },
+      "out": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "5000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "x",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 60,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "5000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "x",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 60,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "5000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "x",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 60,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "in": {
+        "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+        "priceCents": 700,
+        "resource": "https://example.com/crawl?days=7",
+        "description": "10080 minutes of crawl access to https://example.com (7 × 1440)"
+      },
+      "out": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "7000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl?days=7",
+            "description": "10080 minutes of crawl access to https://example.com (7 × 1440)",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "7000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl?days=7",
+            "description": "10080 minutes of crawl access to https://example.com (7 × 1440)",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "7000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl?days=7",
+            "description": "10080 minutes of crawl access to https://example.com (7 × 1440)",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "payments": [
+    {
+      "header": "eyJ4NDAyVmVyc2lvbiI6Miwic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiZWlwMTU1Ojg0NTMiLCJwYXlsb2FkIjp7InNpZ25hdHVyZSI6IjB4YWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYiIsImF1dGhvcml6YXRpb24iOnsiZnJvbSI6IjB4NDZFOTMyMjkzM2NjODczYjQwNTM1Zjk1NzQzNTdBOTdhZGVlNkM3OSIsInRvIjoiMHhDQzNiMDcyMzkxQUU3QThkMTBjRjAwRGRDNUY2MURCMmNBNTU0MUU1IiwidmFsdWUiOiIxMDAwMDAwIiwidmFsaWRBZnRlciI6IjAiLCJ2YWxpZEJlZm9yZSI6IjE4MDAwMDA2MDAiLCJub25jZSI6IjB4MTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMSJ9fX0=",
+      "decodes": true,
+      "network": "eip155:8453",
+      "expected": {
+        "amount": "1000000",
+        "resource": "https://example.com/crawl",
+        "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      }
+    },
+    {
+      "header": "eyJ4NDAyVmVyc2lvbiI6Miwic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiRUlQMTU1OjEzNyIsInBheWxvYWQiOnsic2lnbmF0dXJlIjoiMHhhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiIiwiYXV0aG9yaXphdGlvbiI6eyJmcm9tIjoiMHg0NkU5MzIyOTMzY2M4NzNiNDA1MzVmOTU3NDM1N0E5N2FkZWU2Qzc5IiwidG8iOiIweENDM2IwNzIzOTFBRTdBOGQxMGNGMDBEZEM1RjYxREIyY0E1NTQxRTUiLCJ2YWx1ZSI6IjMwMDAwMDAiLCJ2YWxpZEFmdGVyIjoiMCIsInZhbGlkQmVmb3JlIjoiMTgwMDAwMDYwMCIsIm5vbmNlIjoiMHgxMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExIn19fQ==",
+      "decodes": true,
+      "network": "EIP155:137",
+      "expected": {
+        "amount": "1000000",
+        "resource": "https://example.com/crawl",
+        "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+        "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+      },
+      "why": "network compared case-insensitively"
+    },
+    {
+      "header": "eyJ4NDAyVmVyc2lvbiI6Miwic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiZWlwMTU1OjU2IiwicGF5bG9hZCI6eyJzaWduYXR1cmUiOiIweGFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWIiLCJhdXRob3JpemF0aW9uIjp7ImZyb20iOiIweDQ2RTkzMjI5MzNjYzg3M2I0MDUzNWY5NTc0MzU3QTk3YWRlZTZDNzkiLCJ0byI6IjB4Q0MzYjA3MjM5MUFFN0E4ZDEwY0YwMERkQzVGNjFEQjJjQTU1NDFFNSIsInZhbHVlIjoiMTAwMDAwMCIsInZhbGlkQWZ0ZXIiOiIwIiwidmFsaWRCZWZvcmUiOiIxODAwMDAwNjAwIiwibm9uY2UiOiIweDExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTEifX19",
+      "decodes": true,
+      "network": "eip155:56",
+      "expected": null,
+      "why": "not an offered network"
+    },
+    {
+      "header": "not base64 json",
+      "decodes": false
+    },
+    {
+      "header": "WzEsMl0=",
+      "decodes": true,
+      "isObject": true,
+      "why": "an array is an object to JSON.parse; expectedFor then finds no network",
+      "expected": null
+    },
+    {
+      "header": "InN0ciI=",
+      "decodes": false,
+      "why": "a string is not an object"
+    },
+    {
+      "header": "",
+      "decodes": false
+    },
+    {
+      "header": "eyJ4NDAyVmVyc2lvbiI6Miwic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiZWlwMTU1Ojg0NTMiLCJwYXlsb2FkIjp7InNpZ25hdHVyZSI6IjB4YWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYiIsImF1dGhvcml6YXRpb24iOnsiZnJvbSI6IjB4NDZFOTMyMjkzM2NjODczYjQwNTM1Zjk1NzQzNTdBOTdhZGVlNkM3OSIsInRvIjoiMHhDQzNiMDcyMzkxQUU3QThkMTBjRjAwRGRDNUY2MURCMmNBNTU0MUU1IiwidmFsdWUiOiIxMDAwMDAwIiwidmFsaWRBZnRlciI6IjAiLCJ2YWxpZEJlZm9yZSI6IjE4MDAwMDA2MDAiLCJub25jZSI6IjB4MTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMSJ9fX0=",
+      "decodes": true,
+      "network": "eip155:8453",
+      "why": "base64url accepted"
+    }
+  ],
+  "daysPaid": [
+    {
+      "value": "1000000",
+      "unit": "1000000",
+      "maxDays": 30,
+      "days": 1
+    },
+    {
+      "value": "7000000",
+      "unit": "1000000",
+      "maxDays": 30,
+      "days": 7
+    },
+    {
+      "value": "30000000",
+      "unit": "1000000",
+      "maxDays": 30,
+      "days": 30
+    },
+    {
+      "value": "31000000",
+      "unit": "1000000",
+      "maxDays": 30,
+      "days": 0,
+      "why": "over maxDays"
+    },
+    {
+      "value": "1500000",
+      "unit": "1000000",
+      "maxDays": 30,
+      "days": 0,
+      "why": "not a whole multiple"
+    },
+    {
+      "value": "999999",
+      "unit": "1000000",
+      "maxDays": 30,
+      "days": 0,
+      "why": "underpaid"
+    },
+    {
+      "value": "0",
+      "unit": "1000000",
+      "maxDays": 30,
+      "days": 0
+    },
+    {
+      "value": null,
+      "unit": "1000000",
+      "maxDays": 30,
+      "days": 0
+    },
+    {
+      "value": "abc",
+      "unit": "1000000",
+      "maxDays": 30,
+      "days": 0
+    },
+    {
+      "value": "3000000",
+      "unit": "1500000",
+      "maxDays": 30,
+      "days": 2
+    },
+    {
+      "value": "1000000",
+      "unit": "0",
+      "maxDays": 30,
+      "days": 0
+    },
+    {
+      "value": "123456789012345678901234567890",
+      "unit": "1000000",
+      "maxDays": 30,
+      "days": 0,
+      "why": "bigger than 64 bits, must not overflow"
+    },
+    {
+      "value": "20000000000000000000",
+      "unit": "10000000000000000000",
+      "maxDays": 30,
+      "days": 2,
+      "why": "bigger than 64 bits, divides exactly"
+    }
+  ],
+  "agents": [
+    {
+      "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)",
+      "training": true
+    },
+    {
+      "ua": "Mozilla/5.0 (compatible; ClaudeBot/1.0; +claudebot@anthropic.com)",
+      "training": true
+    },
+    {
+      "ua": "CCBot/2.0 (https://commoncrawl.org/faq/)",
+      "training": true
+    },
+    {
+      "ua": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 (compatible; meta-externalagent/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler))",
+      "training": true
+    },
+    {
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15 (Applebot-Extended)",
+      "training": true
+    },
+    {
+      "ua": "Bytespider; spider-feedback@bytedance.com",
+      "training": true
+    },
+    {
+      "ua": "gptbot",
+      "training": true,
+      "why": "case-insensitive"
+    },
+    {
+      "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot",
+      "training": false
+    },
+    {
+      "ua": "Mozilla/5.0 (compatible; Claude-SearchBot/1.0)",
+      "training": false
+    },
+    {
+      "ua": "Mozilla/5.0 (compatible; Applebot/0.1; +http://www.apple.com/go/applebot)",
+      "training": false
+    },
+    {
+      "ua": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+      "training": false
+    },
+    {
+      "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "training": false
+    },
+    {
+      "ua": "",
+      "training": false
+    }
+  ],
+  "cidrs": {
+    "list": [
+      "51.38.0.0/16",
+      "54.38.0.0/16",
+      "10.0.0.1",
+      "192.168.0.0/0",
+      "garbage",
+      "1.2.3.4/33",
+      "300.1.1.1/8"
+    ],
+    "compiled": [
+      "51.38.0.0/16",
+      "54.38.0.0/16",
+      "10.0.0.1/32",
+      "192.168.0.0/0"
+    ],
+    "cases": [
+      {
+        "ip": "51.38.1.2",
+        "hit": true
+      },
+      {
+        "ip": "51.39.0.1",
+        "hit": true,
+        "why": "the /0 matches everything"
+      },
+      {
+        "ip": "10.0.0.1",
+        "hit": true
+      },
+      {
+        "ip": "",
+        "hit": false
+      },
+      {
+        "ip": "nope",
+        "hit": false
+      },
+      {
+        "ip": "51.38.1.2.3",
+        "hit": false
+      }
+    ],
+    "narrow": {
+      "list": [
+        "51.38.0.0/16",
+        "10.0.0.1"
+      ],
+      "cases": [
+        {
+          "ip": "51.38.255.255",
+          "hit": true
+        },
+        {
+          "ip": "51.39.0.0",
+          "hit": false
+        },
+        {
+          "ip": "10.0.0.1",
+          "hit": true
+        },
+        {
+          "ip": "10.0.0.2",
+          "hit": false
+        },
+        {
+          "ip": "051.038.1.1",
+          "hit": true,
+          "why": "leading zeros are decimal here"
+        }
+      ]
+    }
+  },
+  "clientIp": [
+    {
+      "headers": {
+        "x-real-ip": " 9.9.9.9 "
+      },
+      "ip": "9.9.9.9"
+    },
+    {
+      "headers": {
+        "x-real-ip": "9.9.9.9",
+        "x-forwarded-for": "1.1.1.1"
+      },
+      "ip": "9.9.9.9",
+      "why": "x-real-ip wins"
+    },
+    {
+      "headers": {
+        "x-forwarded-for": "1.1.1.1, 2.2.2.2 , 3.3.3.3"
+      },
+      "ip": "3.3.3.3",
+      "why": "last hop, not first"
+    },
+    {
+      "headers": {
+        "x-forwarded-for": "1.1.1.1,,"
+      },
+      "ip": "1.1.1.1"
+    },
+    {
+      "headers": {},
+      "ip": ""
+    }
+  ],
+  "spoofs": [
+    {
+      "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "headers": {},
+      "spoofed": true
+    },
+    {
+      "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "headers": {
+        "sec-fetch-mode": "navigate"
+      },
+      "spoofed": false
+    },
+    {
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:130.0) Gecko/20100101 Firefox/130.0",
+      "headers": {},
+      "spoofed": false,
+      "why": "only Chromium is judged"
+    },
+    {
+      "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/145.0.0.0 Safari/537.36",
+      "headers": {},
+      "spoofed": false,
+      "why": "declares itself"
+    },
+    {
+      "ua": "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/145.0.0.0",
+      "headers": {},
+      "spoofed": false
+    },
+    {
+      "ua": "MyCrawler/1.0 Chrome/145.0.0.0",
+      "headers": {},
+      "spoofed": false,
+      "why": "\"crawler\" declares itself"
+    },
+    {
+      "ua": "Chrome/145.0.0.0 Lightpanda/1.0",
+      "headers": {},
+      "spoofed": true
+    },
+    {
+      "ua": "",
+      "headers": {},
+      "spoofed": false
+    }
+  ],
+  "robots": [
+    {
+      "in": {
+        "siteUrl": "https://example.com"
+      },
+      "out": "User-agent: GPTBot\nDisallow: /\nAllow: /crawl\n\nUser-agent: ClaudeBot\nDisallow: /\nAllow: /crawl\n\nUser-agent: anthropic-ai\nDisallow: /\nAllow: /crawl\n\nUser-agent: CCBot\nDisallow: /\nAllow: /crawl\n\nUser-agent: meta-externalagent\nDisallow: /\nAllow: /crawl\n\nUser-agent: FacebookBot\nDisallow: /\nAllow: /crawl\n\nUser-agent: Bytespider\nDisallow: /\nAllow: /crawl\n\nUser-agent: Applebot-Extended\nDisallow: /\nAllow: /crawl\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: Claude-SearchBot\nAllow: /\n\nUser-agent: Claude-User\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Perplexity-User\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nUser-agent: Bingbot\nAllow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: https://example.com/sitemap.xml\n"
+    },
+    {
+      "in": {
+        "siteUrl": "https://example.com/",
+        "disallow": [
+          "/login",
+          "/api/"
+        ],
+        "allow": [
+          "/api/v1"
+        ],
+        "sitemap": "",
+        "refused": [
+          "AhrefsBot"
+        ],
+        "comments": [
+          "Training crawlers buy a pass at /crawl",
+          "Search crawlers are welcome"
+        ]
+      },
+      "out": "# Training crawlers buy a pass at /crawl\n# Search crawlers are welcome\n\nUser-agent: AhrefsBot\nDisallow: /\n\nUser-agent: GPTBot\nDisallow: /\nAllow: /crawl\n\nUser-agent: ClaudeBot\nDisallow: /\nAllow: /crawl\n\nUser-agent: anthropic-ai\nDisallow: /\nAllow: /crawl\n\nUser-agent: CCBot\nDisallow: /\nAllow: /crawl\n\nUser-agent: meta-externalagent\nDisallow: /\nAllow: /crawl\n\nUser-agent: FacebookBot\nDisallow: /\nAllow: /crawl\n\nUser-agent: Bytespider\nDisallow: /\nAllow: /crawl\n\nUser-agent: Applebot-Extended\nDisallow: /\nAllow: /crawl\n\nUser-agent: OAI-SearchBot\nAllow: /\nAllow: /api/v1\nDisallow: /login\nDisallow: /api/\n\nUser-agent: ChatGPT-User\nAllow: /\nAllow: /api/v1\nDisallow: /login\nDisallow: /api/\n\nUser-agent: Claude-SearchBot\nAllow: /\nAllow: /api/v1\nDisallow: /login\nDisallow: /api/\n\nUser-agent: Claude-User\nAllow: /\nAllow: /api/v1\nDisallow: /login\nDisallow: /api/\n\nUser-agent: PerplexityBot\nAllow: /\nAllow: /api/v1\nDisallow: /login\nDisallow: /api/\n\nUser-agent: Perplexity-User\nAllow: /\nAllow: /api/v1\nDisallow: /login\nDisallow: /api/\n\nUser-agent: Google-Extended\nAllow: /\nAllow: /api/v1\nDisallow: /login\nDisallow: /api/\n\nUser-agent: Bingbot\nAllow: /\nAllow: /api/v1\nDisallow: /login\nDisallow: /api/\n\nUser-agent: *\nAllow: /\nAllow: /api/v1\nDisallow: /login\nDisallow: /api/\n"
+    },
+    {
+      "in": {
+        "siteUrl": "https://example.com",
+        "path": "/buy",
+        "training": [
+          "GPTBot"
+        ],
+        "retrieval": [
+          "Bingbot"
+        ],
+        "sitemap": "https://example.com/sm.xml"
+      },
+      "out": "User-agent: GPTBot\nDisallow: /\nAllow: /buy\n\nUser-agent: Bingbot\nAllow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: https://example.com/sm.xml\n"
+    }
+  ],
+  "gateway": {
+    "siteUrl": "https://example.com",
+    "coinpay": {
+      "apiKey": "cp_live_test_secret_0123456789"
+    },
+    "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+    "denyCidrs": [
+      "51.38.0.0/16"
+    ],
+    "chargeSpoofedBrowsers": true,
+    "openPaths": [
+      "/llms.txt",
+      "/api/public/"
+    ],
+    "exempt": "session="
+  },
+  "handle": [
+    {
+      "name": "person passes",
+      "url": "/",
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+        "sec-fetch-mode": "navigate"
+      },
+      "pass": true
+    },
+    {
+      "name": "no user agent passes",
+      "url": "/",
+      "headers": {},
+      "pass": true
+    },
+    {
+      "name": "retrieval crawler passes",
+      "url": "/",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot"
+      },
+      "pass": true
+    },
+    {
+      "name": "training crawler is charged, JSON",
+      "url": "/",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)"
+      },
+      "status": 402,
+      "contentType": "application/json",
+      "body": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "1000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "1000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "1000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 1,
+          "total": "1.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "Payment required for training crawlers. Read https://example.com/crawl for how."
+      },
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "training crawler is charged, HTML",
+      "url": "/some/page?x=1",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)",
+        "accept": "text/html,application/xhtml+xml"
+      },
+      "status": 402,
+      "contentType": "text/html",
+      "htmlContains": [
+        "1.00 USD",
+        "x-crawl-pass",
+        "https://example.com/crawl"
+      ],
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "training crawler reads robots.txt",
+      "url": "/robots.txt",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)"
+      },
+      "pass": true
+    },
+    {
+      "name": "training crawler reads security.txt",
+      "url": "/security.txt",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)"
+      },
+      "pass": true
+    },
+    {
+      "name": "training crawler reads .well-known",
+      "url": "/.well-known/security.txt",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)"
+      },
+      "pass": true
+    },
+    {
+      "name": "training crawler reads an open path",
+      "url": "/llms.txt",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)"
+      },
+      "pass": true
+    },
+    {
+      "name": "training crawler reads under an open prefix",
+      "url": "/api/public/feeds",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)"
+      },
+      "pass": true
+    },
+    {
+      "name": "open prefix is a prefix, not a substring",
+      "url": "/api/publicity",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)"
+      },
+      "why": "/api/public/ must match the directory only",
+      "status": 402,
+      "contentType": "application/json",
+      "body": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "1000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "1000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "1000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 1,
+          "total": "1.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "Payment required for training crawlers. Read https://example.com/crawl for how."
+      },
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "training crawler with a valid pass passes",
+      "url": "/",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)",
+        "x-crawl-pass": "cp_eyJ2IjoxLCJpYXQiOjE4MDAwMDAwMDAsImV4cCI6MTgwMDA4NjQwMCwicmVmIjoiMHhkZWFkYmVlZiJ9.O_9Bv0VkyFNIOALzB2yD9iWqXNsoskZF7vPeBKuO5Ds"
+      },
+      "pass": true
+    },
+    {
+      "name": "training crawler with a bearer pass passes",
+      "url": "/",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)",
+        "authorization": "Bearer cp_eyJ2IjoxLCJpYXQiOjE4MDAwMDAwMDAsImV4cCI6MTgwMDA4NjQwMCwicmVmIjoiMHhkZWFkYmVlZiJ9.O_9Bv0VkyFNIOALzB2yD9iWqXNsoskZF7vPeBKuO5Ds"
+      },
+      "pass": true
+    },
+    {
+      "name": "training crawler with a bad pass is charged",
+      "url": "/",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)",
+        "x-crawl-pass": "cp_bad.bad"
+      },
+      "status": 402,
+      "contentType": "application/json",
+      "body": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "1000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "1000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "1000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 1,
+          "total": "1.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "Payment required for training crawlers. Read https://example.com/crawl for how."
+      },
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "training crawler with a session cookie is exempt",
+      "url": "/",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)",
+        "cookie": "a=b; session=xyz"
+      },
+      "pass": true
+    },
+    {
+      "name": "spoofed Chrome is charged",
+      "url": "/",
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"
+      },
+      "status": 402,
+      "contentType": "application/json",
+      "body": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "1000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "1000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "1000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 1,
+          "total": "1.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "Payment required for training crawlers. Read https://example.com/crawl for how."
+      },
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "denied CIDR is 403 even for a person",
+      "url": "/",
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+        "sec-fetch-mode": "navigate",
+        "x-forwarded-for": "1.1.1.1, 51.38.9.9"
+      },
+      "status": 403,
+      "contentType": "text/plain",
+      "text": "Not available from this network.\n",
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "denied CIDR beats the sales page",
+      "url": "/crawl",
+      "headers": {
+        "x-real-ip": "51.38.0.1"
+      },
+      "status": 403,
+      "contentType": "text/plain",
+      "text": "Not available from this network.\n",
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "denied CIDR beats a session",
+      "url": "/",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)",
+        "cookie": "session=1",
+        "x-real-ip": "51.38.0.1"
+      },
+      "status": 403,
+      "contentType": "text/plain",
+      "text": "Not available from this network.\n",
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "sales page answers a person as HTML",
+      "url": "/crawl",
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+        "sec-fetch-mode": "navigate",
+        "accept": "text/html"
+      },
+      "status": 402,
+      "contentType": "text/html",
+      "htmlContains": [
+        "1.00 USD",
+        "x-crawl-pass",
+        "https://example.com/crawl"
+      ],
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "sales page answers curl as JSON",
+      "url": "/crawl",
+      "headers": {
+        "user-agent": "curl/8.0"
+      },
+      "status": 402,
+      "contentType": "application/json",
+      "body": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "1000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "1000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "1000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 1,
+          "total": "1.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "Payment required for training crawlers. Read https://example.com/crawl for how."
+      },
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "sales page quotes 7 days",
+      "url": "/crawl?days=7",
+      "headers": {
+        "user-agent": "curl/8.0"
+      },
+      "status": 402,
+      "contentType": "application/json",
+      "body": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "7000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "10080 minutes of crawl access to https://example.com (7 × 1440)",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "7000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "10080 minutes of crawl access to https://example.com (7 × 1440)",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "7000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "10080 minutes of crawl access to https://example.com (7 × 1440)",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 7,
+          "total": "7.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl?days=7",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "Payment required for training crawlers. Read https://example.com/crawl for how."
+      },
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "sales page clamps days to maxDays",
+      "url": "/crawl?days=99",
+      "headers": {
+        "user-agent": "curl/8.0"
+      },
+      "status": 402,
+      "contentType": "application/json",
+      "body": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "30000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "43200 minutes of crawl access to https://example.com (30 × 1440)",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "30000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "43200 minutes of crawl access to https://example.com (30 × 1440)",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "30000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "43200 minutes of crawl access to https://example.com (30 × 1440)",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 30,
+          "total": "30.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl?days=30",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "Payment required for training crawlers. Read https://example.com/crawl for how."
+      },
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "sales page treats junk days as one",
+      "url": "/crawl?days=abc",
+      "headers": {
+        "user-agent": "curl/8.0"
+      },
+      "status": 402,
+      "contentType": "application/json",
+      "body": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "1000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "1000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "1000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 1,
+          "total": "1.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "Payment required for training crawlers. Read https://example.com/crawl for how."
+      },
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "sales page treats zero days as one",
+      "url": "/crawl?days=0",
+      "headers": {
+        "user-agent": "curl/8.0"
+      },
+      "status": 402,
+      "contentType": "application/json",
+      "body": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "1000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "1000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "1000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 1,
+          "total": "1.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "Payment required for training crawlers. Read https://example.com/crawl for how."
+      },
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "proof that is not base64 JSON",
+      "url": "/crawl",
+      "headers": {
+        "x-payment": "nope"
+      },
+      "status": 402,
+      "contentType": "application/json",
+      "body": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "1000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "1000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "1000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 1,
+          "total": "1.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "X-PAYMENT is not base64 JSON."
+      },
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "proof on an unoffered network",
+      "url": "/crawl",
+      "headers": {
+        "x-payment": "eyJ4NDAyVmVyc2lvbiI6Miwic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiZWlwMTU1OjU2IiwicGF5bG9hZCI6eyJzaWduYXR1cmUiOiIweGFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWIiLCJhdXRob3JpemF0aW9uIjp7ImZyb20iOiIweDQ2RTkzMjI5MzNjYzg3M2I0MDUzNWY5NTc0MzU3QTk3YWRlZTZDNzkiLCJ0byI6IjB4Q0MzYjA3MjM5MUFFN0E4ZDEwY0YwMERkQzVGNjFEQjJjQTU1NDFFNSIsInZhbHVlIjoiMTAwMDAwMCIsInZhbGlkQWZ0ZXIiOiIwIiwidmFsaWRCZWZvcmUiOiIxODAwMDAwNjAwIiwibm9uY2UiOiIweDExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTEifX19"
+      },
+      "status": 402,
+      "contentType": "application/json",
+      "body": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "1000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "1000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "1000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 1,
+          "total": "1.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "Proof does not match an offered network."
+      },
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    },
+    {
+      "name": "proof for a fraction of a day",
+      "url": "/crawl",
+      "headers": {
+        "x-payment": "eyJ4NDAyVmVyc2lvbiI6Miwic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiZWlwMTU1Ojg0NTMiLCJwYXlsb2FkIjp7InNpZ25hdHVyZSI6IjB4YWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYiIsImF1dGhvcml6YXRpb24iOnsiZnJvbSI6IjB4NDZFOTMyMjkzM2NjODczYjQwNTM1Zjk1NzQzNTdBOTdhZGVlNkM3OSIsInRvIjoiMHhDQzNiMDcyMzkxQUU3QThkMTBjRjAwRGRDNUY2MURCMmNBNTU0MUU1IiwidmFsdWUiOiIxNTAwMDAwIiwidmFsaWRBZnRlciI6IjAiLCJ2YWxpZEJlZm9yZSI6IjE4MDAwMDA2MDAiLCJub25jZSI6IjB4MTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMSJ9fX0="
+      },
+      "status": 402,
+      "contentType": "application/json",
+      "body": {
+        "x402Version": 2,
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "1000000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:137",
+            "amount": "1000000",
+            "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          },
+          {
+            "scheme": "exact",
+            "network": "eip155:1",
+            "amount": "1000000",
+            "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "payTo": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+            "resource": "https://example.com/crawl",
+            "description": "1440 minutes of crawl access to https://example.com",
+            "mimeType": "application/json",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 1,
+          "total": "1.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "Pay a whole number of days: 1000000 per day in the token's smallest unit, up to 30 days. Add ?days=<n> to https://example.com/crawl for the offer."
+      },
+      "responseHeaders": {
+        "cache-control": "no-store",
+        "vary": "Accept, User-Agent, X-Payment"
+      }
+    }
+  ],
+  "disabled": [
+    {
+      "name": "disabled gateway still charges, offer is empty",
+      "url": "/",
+      "headers": {
+        "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)"
+      },
+      "status": 402,
+      "body": {
+        "x402Version": 2,
+        "accepts": [],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 1,
+          "total": "1.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "Payment required for training crawlers. Read https://example.com/crawl for how."
+      }
+    },
+    {
+      "name": "disabled gateway refuses a proof",
+      "url": "/crawl",
+      "headers": {
+        "x-payment": "eyJ4NDAyVmVyc2lvbiI6Miwic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiZWlwMTU1Ojg0NTMiLCJwYXlsb2FkIjp7InNpZ25hdHVyZSI6IjB4YWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYiIsImF1dGhvcml6YXRpb24iOnsiZnJvbSI6IjB4NDZFOTMyMjkzM2NjODczYjQwNTM1Zjk1NzQzNTdBOTdhZGVlNkM3OSIsInRvIjoiMHhDQzNiMDcyMzkxQUU3QThkMTBjRjAwRGRDNUY2MURCMmNBNTU0MUU1IiwidmFsdWUiOiIxMDAwMDAwIiwidmFsaWRBZnRlciI6IjAiLCJ2YWxpZEJlZm9yZSI6IjE4MDAwMDA2MDAiLCJub25jZSI6IjB4MTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMSJ9fX0="
+      },
+      "status": 402,
+      "body": {
+        "x402Version": 2,
+        "accepts": [],
+        "pass": {
+          "price": "1.00 USD",
+          "minutes": 1440,
+          "days": 1,
+          "total": "1.00 USD",
+          "maxDays": 30,
+          "header": "x-crawl-pass",
+          "buy": "https://example.com/crawl",
+          "buyDays": "https://example.com/crawl?days=<n>"
+        },
+        "error": "Payments are not switched on here."
+      }
+    }
+  ],
+  "coinpay": {
+    "baseUrl": "https://coinpayportal.com",
+    "verify": {
+      "path": "/api/x402/verify",
+      "method": "POST",
+      "headers": {
+        "content-type": "application/json",
+        "x-api-key": "<apiKey>"
+      },
+      "body": {
+        "payment": "<proof>",
+        "expected": "<expectedFor(proof, offer(days))>"
+      },
+      "ok": {
+        "valid": true,
+        "payment": {
+          "from": "<payer>"
+        }
+      },
+      "replayWhen": "error or reason matches /already used|replay/i"
+    },
+    "settle": {
+      "path": "/api/x402/settle",
+      "method": "POST",
+      "headers": {
+        "content-type": "application/json",
+        "x-api-key": "<apiKey>"
+      },
+      "body": {
+        "payment": "<proof>"
+      },
+      "ok": {
+        "settled": true,
+        "txHash": "<ref>"
+      },
+      "replayWhen": "error matches /already settled|already being settled/i"
+    },
+    "timeoutMs": 20000,
+    "paid": [
+      {
+        "name": "verify valid + settle settled → 200 with a pass for the days paid",
+        "proof": {
+          "x402Version": 2,
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payload": {
+            "signature": "0xababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab",
+            "authorization": {
+              "from": "0x46E9322933cc873b40535f9574357A97adee6C79",
+              "to": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+              "value": "7000000",
+              "validAfter": "0",
+              "validBefore": "1800000600",
+              "nonce": "0x1111111111111111111111111111111111111111111111111111111111111111"
+            }
+          }
+        },
+        "verify": {
+          "valid": true,
+          "payment": {
+            "from": "0x46E9322933cc873b40535f9574357A97adee6C79"
+          }
+        },
+        "settle": {
+          "settled": true,
+          "txHash": "0xtx"
+        },
+        "status": 200,
+        "days": 7,
+        "minutes": 10080,
+        "replayed": false,
+        "ref": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "why": "ref is the nonce when present"
+      },
+      {
+        "name": "verify invalid → 402",
+        "proof": {
+          "x402Version": 2,
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payload": {
+            "signature": "0xababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab",
+            "authorization": {
+              "from": "0x46E9322933cc873b40535f9574357A97adee6C79",
+              "to": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+              "value": "1000000",
+              "validAfter": "0",
+              "validBefore": "1800000600",
+              "nonce": "0x1111111111111111111111111111111111111111111111111111111111111111"
+            }
+          }
+        },
+        "verify": {
+          "valid": false,
+          "error": "bad signature"
+        },
+        "status": 402,
+        "error": "bad signature"
+      },
+      {
+        "name": "settle failed → 402",
+        "proof": {
+          "x402Version": 2,
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payload": {
+            "signature": "0xababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab",
+            "authorization": {
+              "from": "0x46E9322933cc873b40535f9574357A97adee6C79",
+              "to": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+              "value": "1000000",
+              "validAfter": "0",
+              "validBefore": "1800000600",
+              "nonce": "0x1111111111111111111111111111111111111111111111111111111111111111"
+            }
+          }
+        },
+        "verify": {
+          "valid": true
+        },
+        "settle": {
+          "settled": false,
+          "error": "relayer down"
+        },
+        "status": 402,
+        "error": "relayer down"
+      },
+      {
+        "name": "replayed proof, settle says already settled → 200 replayed, bounded by validBefore",
+        "proof": {
+          "x402Version": 2,
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payload": {
+            "signature": "0xababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab",
+            "authorization": {
+              "from": "0x46E9322933cc873b40535f9574357A97adee6C79",
+              "to": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+              "value": "1000000",
+              "validAfter": "0",
+              "validBefore": "1800000300",
+              "nonce": "0x2222222222222222222222222222222222222222222222222222222222222222"
+            }
+          }
+        },
+        "verify": {
+          "valid": false,
+          "error": "nonce already used"
+        },
+        "settleAgain": {
+          "settled": false,
+          "error": "already settled"
+        },
+        "status": 200,
+        "days": 1,
+        "replayed": true,
+        "expiresAt": 1800086400,
+        "why": "min(now+term, validBefore+term)"
+      },
+      {
+        "name": "replayed proof, settle says never paid → 402",
+        "proof": {
+          "x402Version": 2,
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payload": {
+            "signature": "0xababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab",
+            "authorization": {
+              "from": "0x46E9322933cc873b40535f9574357A97adee6C79",
+              "to": "0xCC3b072391AE7A8d10cF00DdC5F61DB2cA5541E5",
+              "value": "1000000",
+              "validAfter": "0",
+              "validBefore": "1800000600",
+              "nonce": "0x1111111111111111111111111111111111111111111111111111111111111111"
+            }
+          }
+        },
+        "verify": {
+          "valid": false,
+          "error": "replay"
+        },
+        "settleAgain": {
+          "settled": false,
+          "error": "unknown nonce"
+        },
+        "status": 402
+      }
+    ]
+  }
+}

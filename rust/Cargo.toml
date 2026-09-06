@@ -1,0 +1,9 @@
+[workspace]
+members = ["x402-gateway", "coinpay"]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/profullstack/x402-ports"
+authors = ["Profullstack, LLC"]

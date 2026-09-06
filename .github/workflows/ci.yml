@@ -1,0 +1,66 @@
+name: ci
+on:
+  push: { branches: [main] }
+  pull_request:
+jobs:
+  vectors:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: cd spec && npm ci --no-audit --no-fund && node gen-vectors.mjs > /tmp/vectors.json && diff -q /tmp/vectors.json vectors.json
+  python:
+    runs-on: ubuntu-latest
+    strategy: { matrix: { python: ["3.9", "3.13"] } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "${{ matrix.python }}" }
+      - run: cd python/x402_gateway && python -m unittest discover -s tests
+      - run: cd python/coinpay && python -m unittest discover -s tests
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version: "1.22" }
+      - run: cd go && test -z "$(gofmt -l .)" && go vet ./... && go test ./...
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cd rust && cargo fmt --all --check && cargo test --workspace && cargo build -p x402-gateway --features axum
+  ruby:
+    runs-on: ubuntu-latest
+    strategy: { matrix: { ruby: ["3.0", "3.3"] } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with: { ruby-version: "${{ matrix.ruby }}" }
+      - run: cd ruby/x402-gateway && ruby test/vectors_test.rb
+      - run: cd ruby/coinpay && ruby test/launcher_test.rb
+  php:
+    runs-on: ubuntu-latest
+    strategy: { matrix: { php: ["8.1", "8.4"] } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with: { php-version: "${{ matrix.php }}", extensions: "bcmath,curl,json" }
+      - run: cd php/x402-gateway && php -l src/Gateway.php && php tests/vectors.php
+      - run: cd php/coinpay && php tests/launcher.php
+  elixir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: erlef/setup-beam@v1
+        with: { otp-version: "27", elixir-version: "1.18" }
+      - run: cd elixir/x402_gateway && mix deps.get && mix format --check-formatted && mix test
+  zig:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mlugg/setup-zig@v2
+        with: { version: "0.16.0" }
+      - run: cd zig && zig fmt --check src build.zig && zig build test

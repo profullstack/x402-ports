@@ -1,0 +1,17 @@
+name: release-rust
+on:
+  push: { tags: ["rust-v*"] }
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    # crates.io trusted publishing (rust-lang/crates-io-auth-action) or CARGO_REGISTRY_TOKEN.
+    permissions: { id-token: write, contents: read }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: rust-lang/crates-io-auth-action@v1
+        id: auth
+        continue-on-error: true
+      - run: cd rust && cargo publish -p x402-gateway && cargo publish -p coinpay
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ steps.auth.outputs.token || secrets.CARGO_REGISTRY_TOKEN }}

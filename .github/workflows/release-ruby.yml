@@ -1,0 +1,15 @@
+name: release-ruby
+on:
+  push: { tags: ["ruby-v*"] }
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    # RubyGems trusted publishing: register this repo + workflow on rubygems.org for both gems.
+    permissions: { id-token: write, contents: write }
+    strategy: { matrix: { gem: [x402-gateway, coinpay] } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with: { ruby-version: "3.3" }
+      - uses: rubygems/release-gem@v1
+        with: { working-directory: ruby/${{ matrix.gem }} }
