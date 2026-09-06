@@ -4,14 +4,13 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    # PyPI trusted publishing: register this repo + workflow on pypi.org for both
-    # projects, with the environment below. The environment is what stops a
-    # maintainer with commit access from publishing to PyPI without review: the
-    # OIDC token PyPI accepts is only issued to a job running in it, so protection
-    # rules on the environment gate the release. Create it under the repository's
-    # Settings → Environments, and name it in each project's publisher on PyPI.
+    # Publishes with an API token held as a secret on the `pypi` environment,
+    # which only tags matching python-v* may deploy to. That keeps the gate —
+    # a branch push can never reach the token — without depending on PyPI's
+    # trusted-publisher form, whose claims have to be retyped by hand for every
+    # project and silently reject the release when one field is off.
     environment: pypi
-    permissions: { id-token: write, contents: read }
+    permissions: { contents: read }
     strategy: { matrix: { package: [x402_gateway, coinpay] } }
     steps:
       - uses: actions/checkout@v4
@@ -19,4 +18,9 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install build && cd python/${{ matrix.package }} && python -m build
       - uses: pypa/gh-action-pypi-publish@release/v1
-        with: { packages-dir: "python/${{ matrix.package }}/dist" }
+        with:
+          packages-dir: "python/${{ matrix.package }}/dist"
+          password: ${{ secrets.PYPI_API_TOKEN }}
+          # A re-run, or a tag that only moves one of the two packages, should
+          # not fail on the version that is already up.
+          skip-existing: true
