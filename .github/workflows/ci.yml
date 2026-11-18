@@ -11,7 +11,9 @@ jobs:
         with: { node-version: 22 }
       - run: cd spec && npm ci --no-audit --no-fund && node gen-vectors.mjs > /tmp/vectors.json && diff -q /tmp/vectors.json vectors.json
   python:
-    runs-on: ubuntu-latest
+    # ubuntu-latest is 26.04, which has no Python 3.9 build; the packages still
+    # declare requires-python >=3.9, so test it on 24.04.
+    runs-on: ubuntu-24.04
     strategy: { matrix: { python: ["3.9", "3.13"] } }
     steps:
       - uses: actions/checkout@v4
